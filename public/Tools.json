@@ -1,0 +1,38 @@
+[
+    {
+        "img": "https://i.ibb.co/KWkrhjN/mouse.jpg",
+        "price": 2000,
+        "name": "Mouse",
+        "description": "Systems has dedicated its efforts to the development and production of high-quality air-conditioning and heating systems for vehicles, driven by the true innovation of the Company's proprietary technology.",
+        "quantity": [
+            "100 pcs",
+            "200 pcs",
+            "300 pcs",
+            "400 pcs"
+        ]
+    },
+    {
+        "img": "https://i.ibb.co/DwZSh8z/keyboard.webp",
+        "price": 6000,
+        "name": "Keyboard",
+        "description": "Industry-Leading Friction Technology Produces quiet, smooth, safe stopping with reduced noise and more reliable. Advanced Slots and Chamfers. Absorb vibration, reduce noise and provide an excellent cost-per-mile value. .",
+        "quantity": [
+            "100 pcs",
+            "200 pcs",
+            "300 pcs",
+            "400 pcs"
+        ]
+    },
+    {
+        "img": "https://i.ibb.co/BwM2Jmg/casing.jpg",
+        "price": 6000,
+        "name": "Casing",
+        "description": "Industry-Leading Friction Technology Produces quiet, smooth, safe stopping with reduced noise and more reliable. Advanced Slots and Chamfers. Absorb vibration, reduce noise and provide an excellent cost-per-mile value. .",
+        "quantity": [
+            "100 pcs",
+            "200 pcs",
+            "300 pcs",
+            "400 pcs"
+        ]
+    }
+]
