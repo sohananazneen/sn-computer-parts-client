@@ -37,12 +37,7 @@ const SingleTool = ({ service, setPurchase }) => {
                     }
                 </p>
                 <div className="card-actions">
-                    <button onClick={() => navigateToPurchase(_id)} disabled={quantity == 0} className='btn btn-primary mx-2'>Purchase</button>
-                    {/* <label htmlFor="purchase-modal"
-                        disabled={quantity.length === 0}
-                        onClick={() => setPurchase(service)}
-                        className="btn btn-primary modal-button">Purchase
-                    </label> */}
+                    <button onClick={() => navigateToPurchase(_id)} disabled={quantity == 0} className='btn btn-primary mx-2'>Buy Now</button>
                 </div>
             </div>
         </div>

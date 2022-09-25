@@ -1,11 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import useTools from '../../hooks/useTools';
-import PurchaseModal from './PurchaseModal';
 import SingleTool from './SingleTool';
+
 const Tools = () => {
     const [tools, setTools] = useTools();
-    const [purchase, setPurchase] = useState(null);
 
     return (
         <section className='my-28'>
@@ -17,14 +16,9 @@ const Tools = () => {
                     tools.map(service => <SingleTool
                         key={service._id}
                         service={service}
-                        setPurchase={setPurchase}
                     ></SingleTool>)
                 }
             </div>
-            {purchase && <PurchaseModal
-                purchase={purchase}
-                setPurchase={setPurchase}
-            ></PurchaseModal>}
         </section>
     );
 };

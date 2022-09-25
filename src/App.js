@@ -12,6 +12,7 @@ import Contact from "./Pages/Contact/Contact";
 import NotFound from "./Pages/Shared/NotFound";
 import Tools from "./Pages/Tools/Tools";
 import Reviews from "./Pages/Reviews/Reviews";
+import Blog from "./Pages/Blog/Blog";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="tools" element={<Tools />} />
         <Route path="summary" element={<BusinessSummary />} />
         <Route path="review" element={<Reviews />} />
+        <Route path="blog" element={<Blog />} />
         <Route path="contact" element={<Contact />} />
         <Route path="about" element={<About />} />
         <Route path="tool/:id" element={
