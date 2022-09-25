@@ -13,6 +13,7 @@ import NotFound from "./Pages/Shared/NotFound";
 import Tools from "./Pages/Tools/Tools";
 import Reviews from "./Pages/Reviews/Reviews";
 import Blog from "./Pages/Blog/Blog";
+import Portfolio from "./Pages/Portfolio/Portfolio";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="summary" element={<BusinessSummary />} />
         <Route path="review" element={<Reviews />} />
         <Route path="blog" element={<Blog />} />
+        <Route path="portfolio" element={<Portfolio />} />
         <Route path="contact" element={<Contact />} />
         <Route path="about" element={<About />} />
         <Route path="tool/:id" element={
