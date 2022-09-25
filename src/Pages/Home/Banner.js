@@ -8,7 +8,8 @@ const Banner = () => {
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
                     <h1 className="mb-5 text-5xl font-bold uppercase">Welcome to SN Computer's LTd. </h1>
-                    <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <p className="mb-5">
+                        Computer hardware servicing tools are essential for repair and maintenance of the hardware components of computers. These tools are important to take care of a computer, do the necessary troubleshooting whenever a computer is having issues, and perform computer upgrades.</p>
                     <button className="btn btn-primary font-bold  bg-gradient-to-r from-primary to-secondary">Get Started</button>
                 </div>
             </div>
