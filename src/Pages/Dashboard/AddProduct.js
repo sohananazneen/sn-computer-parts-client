@@ -23,19 +23,17 @@ const AddProduct = () => {
     };
     return (
         <div >
-            <h2 className="text-secondary text-xl text-center my-4">Add Review</h2>
+            <h2 className="text-secondary text-xl text-center my-4">Add Products</h2>
             <div className='flex justify-center m-10'>
                 <form onSubmit={handleSubmit(onSubmit)} className='shadow-md shadow-indigo-500/50 p-10 border'>
                     <div className="form-control w-96 max-w-xs">
                         <label className="label">
-                            <span className="label-text">Name</span>
+                            <span className="label-text">Product Name</span>
                         </label>
                         <input
                             className="input input-bordered w-full max-w-xs"
-                            type="name" placeholder="Enter Name"  {...register("name", { required: true, maxLength: 20 })}
+                            type="name" placeholder="Enter Name"  {...register("toolName", { required: true, maxLength: 20 })}
                         />
-                        <label className="label">
-                        </label>
                     </div>
 
                     <div className="form-control w-full max-w-xs">
@@ -73,7 +71,7 @@ const AddProduct = () => {
                             <span class="label-text">Description</span>
                         </label>
                         <textarea class="textarea h-24 textarea-bordered" placeholder="Product description"
-                            {...register("description", { required: true, maxLength: 20 })}
+                            {...register("description", { required: true })}
                         ></textarea>
                     </div>
 

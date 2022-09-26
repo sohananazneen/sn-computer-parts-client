@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const SingleTool = ({ service }) => {
-    const { _id, img, name, description, price, quantity } = service;
+    const { _id, img, toolName, description, price, quantity } = service;
 
     const min = quantity.length !== 0 ? Math.min(...quantity) : "";
 
@@ -16,7 +16,7 @@ const SingleTool = ({ service }) => {
                 <img src={img} alt="Shoes" className="rounded-xl" />
             </figure>
             <div className="card-body items-center text-center">
-                <h2 className="card-title">{name}</h2>
+                <h2 className="card-title">{toolName}</h2>
                 <p>{description}</p>
                 <p><strong>Price: </strong> {price} $</p>
                 <div>
