@@ -17,7 +17,7 @@ const MyProfile = () => {
             phone: event.target.phone.value
         }
 
-        fetch(`https://stormy-river-80261.herokuapp.com/user`, {
+        fetch(`http://localhost:5000/user`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

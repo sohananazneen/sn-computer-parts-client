@@ -23,7 +23,7 @@ const Purchase = () => {
             address: event.target.address.value,
             phone: event.target.phone.value
         }
-        fetch('https://stormy-river-80261.herokuapp.com/order', {
+        fetch('http://localhost:5000/order', {
             method: 'Post',
             headers: {
                 'content-type': 'application/json'
@@ -43,13 +43,16 @@ const Purchase = () => {
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body items-center text-center">
                     <form onSubmit={handlePlaceOrder} className='grid grid-cols-1 gap-3 my-4'>
+                        <img src={singleTool.img} className="img-fluid rounded w-50" alt="" />
                         <h2 className="card-title">User Name: {user?.displayName}</h2>
                         <h2 >User email: {user?.email}</h2>
                         <p>Tool's Name: {singleTool.name}</p>
                         <p>Price: $ {singleTool.price}</p>
                         <p>Name: {singleTool.name}</p>
 
-                        <input type="text" value={singleTool.quantity} className="input input-bordered w-full max-w-xs" />
+                        {/* <input type="text" value={singleTool.quantity} className="input input-bordered w-full max-w-xs" /> */}
+
+                        <input type="number" value={singleTool.quantity} className="input input-bordered w-full max-w-xs" />
 
                         <input type="text" name="address" placeholder="Address" className="input input-bordered w-full max-w-xs" />
                         <input type="text" name="phone" placeholder="Phone Number" className="input input-bordered w-full max-w-xs" />
