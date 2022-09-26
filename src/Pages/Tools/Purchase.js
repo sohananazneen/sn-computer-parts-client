@@ -23,7 +23,7 @@ const Purchase = () => {
             address: event.target.address.value,
             phone: event.target.phone.value
         }
-        fetch('http://localhost:5000/order', {
+        fetch('https://stormy-river-80261.herokuapp.com/order', {
             method: 'Post',
             headers: {
                 'content-type': 'application/json'
