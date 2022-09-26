@@ -7,7 +7,7 @@ const Contact = () => {
                 <div className='text-center pb-14'>
                     <h1 className='text-secondary text-xl font-bold uppercase'> Contact Us</h1>
                 </div>
-                <div className='grid grid-cols-1 justify-items-center gap-5 shadow-md shadow-indigo-500/50 p-3'>
+                <div className='grid grid-cols-1 justify-items-center gap-5 shadow-md shadow-indigo-500/50 p-3 border'>
                     <label>Email</label>
                     <input
                         type='text'
