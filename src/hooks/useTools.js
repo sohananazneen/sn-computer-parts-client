@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
 const useTools = () => {
-    const [tools, setTools] = useState([]);
+    const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('Tools.json')
+        fetch('http://localhost:5000/service')
             .then(res => res.json())
-            .then(data => setTools(data));
+            .then(data => setServices(data));
     }, [])
-    return [tools, setTools];
+    return [services, setServices];
 };
 export default useTools;

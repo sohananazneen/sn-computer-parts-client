@@ -19,20 +19,21 @@ const Portfolio = () => {
                     {/* Info  */}
                     <div className='my-4'>
                         <h1 className='text-xl font-bold'>Portfolio:</h1>
-                        <h2 className='text-xl'>Sohana Nazneen</h2>
-                        <div className="tooltip" data-tip="sohana.nazneen.1@gmail.com">
-                            <p>E-mail |</p>
+                        <div>
+                            <h2 className='text-xl text-primary'>Sohana Nazneen</h2>
+                            <div className="tooltip text-primary" data-tip="sohana.nazneen.1@gmail.com">
+                                <p>E-mail |</p>
+                            </div>
+                            <div className="tooltip text-primary" data-tip="B.Sc. (Hons) in CSE">
+                                <p>| Educational Background</p>
+                            </div>
                         </div>
-                        <div className="tooltip" data-tip="B.Sc. (Hons) in CSE">
-                            <p>| Educational Background</p>
-                        </div>
-
                     </div>
 
                     {/* Techcno  */}
                     <div className='my-4'>
                         <h1 className='font-bold text-xl'>Technologies or Skills:</h1>
-                        <div className="stats shadow">
+                        <div className="stats shadow my-2">
                             <div className="stat">
                                 <div className="stat-figure text-primary">
                                     <h2>Web Design</h2>

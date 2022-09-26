@@ -1,10 +1,9 @@
 import React from 'react';
-import { useState } from 'react';
 import useTools from '../../hooks/useTools';
 import SingleTool from './SingleTool';
 
 const Tools = () => {
-    const [tools, setTools] = useTools();
+    const [services, setServices] = useTools();
 
     return (
         <section className='my-28'>
@@ -13,7 +12,7 @@ const Tools = () => {
             </div>
             <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {
-                    tools.map(service => <SingleTool
+                    services.map(service => <SingleTool
                         key={service._id}
                         service={service}
                     ></SingleTool>)

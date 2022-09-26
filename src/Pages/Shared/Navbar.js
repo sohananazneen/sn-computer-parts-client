@@ -44,13 +44,21 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {user ? <div className="dropdown dropdown-end">
-                    <label tabIndex={0} className="btn btn-ghost rounded-btn text-center text-secondary text-2xl"><FaUserCircle /></label>
-                    <ul tabIndex={0} className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
-                        <li><Link to='/' className='text-secondary text-center'>{user.displayName}</Link></li>
-                        <li> <button className="btn btn-primary" onClick={logout} >Sign Out</button></li>
-                    </ul>
-                </div> : <Link className="btn btn-primary" to="/login">Login</Link>}
+                <>
+                    {user ? <div className="dropdown dropdown-end text-center">
+                        <label tabIndex={0} className="btn btn-ghost rounded-btn  text-secondary text-3xl"><FaUserCircle /></label>
+                        <ul tabIndex={0} className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4 text-center">
+                            <li><Link to='/' className='text-secondary text-center'>{user.displayName}</Link></li>
+                            <li><p className='text-secondary text-center'>{user.email}</p></li>
+                            <li> <button className="btn btn-primary" onClick={logout} >Sign Out</button></li>
+                        </ul>
+                    </div> : <Link className="btn btn-primary" to="/login">Login</Link>}
+                </>
+                <>
+                    <label tabIndex="1" for="dashboard-sidebar" className="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </label>
+                </>
             </div>
         </div>
     );

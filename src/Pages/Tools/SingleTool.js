@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const SingleTool = ({ service, setPurchase }) => {
+const SingleTool = ({ service }) => {
     const { _id, img, name, description, price, quantity } = service;
 
     const min = quantity.length !== 0 ? Math.min(...quantity) : "";

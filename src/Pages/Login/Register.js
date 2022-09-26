@@ -38,7 +38,6 @@ const Register = () => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
         // console.log(data);
-        navigate('/');
     }
     return (
         <div className="hero min-h-screen bg-base-200">
