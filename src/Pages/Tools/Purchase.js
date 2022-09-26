@@ -48,7 +48,8 @@ const Purchase = () => {
                         <p>Tool's Name: {singleTool.name}</p>
                         <p>Price: $ {singleTool.price}</p>
                         <p>Name: {singleTool.name}</p>
-                        <p>Quantity: {singleTool.quantity[0]}</p>
+
+                        <input type="text" value={singleTool.quantity} className="input input-bordered w-full max-w-xs" />
 
                         <input type="text" name="address" placeholder="Address" className="input input-bordered w-full max-w-xs" />
                         <input type="text" name="phone" placeholder="Phone Number" className="input input-bordered w-full max-w-xs" />

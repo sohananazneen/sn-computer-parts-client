@@ -8,8 +8,12 @@ const MyOrders = () => {
 
     useEffect(() => {
         if (user) {
-            const url = `http://localhost:5000/order?email=${user.email}`;
-            fetch(url)
+            fetch(`http://localhost:5000/order?email=${user.email}`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
                 .then(res => res.json())
                 .then(data => setOrders(data));
         }
@@ -34,8 +38,8 @@ const MyOrders = () => {
                             orders.map((order, index) => <tr key={order._id}>
                                 <th>{index + 1}</th>
                                 <td>{order.toolName}</td>
-                                <td>{order.price}</td>
-                                <td>{order.quantity[0]}</td>
+                                <td>$ {order.price}</td>
+                                <td>{order.quantity[0]}pcs</td>
                                 <td>payment</td>
                             </tr>)
                         }

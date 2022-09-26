@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import loginGif from '../../assets/images/loginGif.gif'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
+import useToken from '../../hooks/useToken';
 
 const Register = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -18,14 +19,20 @@ const Register = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
+    const [token] = useToken(user || gUser);
+
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
     let registerError;
-    if (user || gUser) {
-        navigate(from, { replace: true });
-    }
+
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate])
+
     if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
@@ -38,6 +45,10 @@ const Register = () => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
         // console.log(data);
+    }
+
+    const navigateLogin = event => {
+        navigate('/login');
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -113,7 +124,7 @@ const Register = () => {
                             <p className="text-sm text-white font-semibold mt-2 pt-1 mb-0">
                                 Already Registered?
                                 <Link to="/login"
-                                    className="text-primary"
+                                    className="text-primary" onClick={navigateLogin}
                                 > Please Login </Link>
                             </p>
                             <div className="divider">OR</div>
