@@ -24,6 +24,7 @@ const AllUserTable = ({ user, refetch, index }) => {
 
             })
     }
+
     return (
         <tr>
             <th>{index + 1}</th>
