@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const AddProduct = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = (data, e) => {
-        const url = `http://localhost:5000/service`;
+        const url = `https://stormy-river-80261.herokuapp.com/service`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -66,11 +66,11 @@ const AddProduct = () => {
                         />
                     </div>
 
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">Description</span>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Description</span>
                         </label>
-                        <textarea class="textarea h-24 textarea-bordered" placeholder="Product description"
+                        <textarea className="textarea h-24 textarea-bordered" placeholder="Product description"
                             {...register("description", { required: true })}
                         ></textarea>
                     </div>

@@ -15,7 +15,7 @@ const Purchase = () => {
         const order = {
             email: user?.email,
             UserName: user?.displayName,
-            toolName: singleTool.name,
+            toolName: singleTool.toolName,
             price: singleTool.price,
             toolDescription: singleTool.description,
             id,
@@ -23,7 +23,7 @@ const Purchase = () => {
             address: event.target.address.value,
             phone: event.target.phone.value
         }
-        fetch('http://localhost:5000/order', {
+        fetch('https://stormy-river-80261.herokuapp.com/order', {
             method: 'Post',
             headers: {
                 'content-type': 'application/json'
@@ -44,7 +44,7 @@ const Purchase = () => {
                 <div className="card-body items-center text-center">
                     <form onSubmit={handlePlaceOrder} className='grid grid-cols-1 gap-3 my-4'>
                         <img src={singleTool.img} className="img-fluid rounded w-50" alt="" />
-                        <h2 className="card-title">Tool's Name: {singleTool.name}</h2>
+                        <h2 className="card-title">Tool's Name: {singleTool.toolName}</h2>
                         <h2>User Name: {user?.displayName}</h2>
                         <h2>User email: {user?.email}</h2>
                         <p>Price: $ {singleTool.price}</p>

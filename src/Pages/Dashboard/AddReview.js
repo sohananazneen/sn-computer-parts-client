@@ -6,7 +6,7 @@ const AddReview = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = (data, e) => {
-        const url = `http://localhost:5000/review`;
+        const url = `https://stormy-river-80261.herokuapp.com/review`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -55,11 +55,11 @@ const AddReview = () => {
                             {...register("rating")}
                         />
                     </div>
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">Your Review</span>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Your Review</span>
                         </label>
-                        <textarea class="textarea h-24 textarea-bordered" placeholder="Please give your review"
+                        <textarea className="textarea h-24 textarea-bordered" placeholder="Please give your review"
                             {...register("customerReview")}
                         ></textarea>
                     </div>

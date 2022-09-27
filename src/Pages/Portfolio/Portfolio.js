@@ -70,11 +70,11 @@ const Portfolio = () => {
 
                         {/* car parts  */}
                         <div className='my-4'>
-                            <label htmlFor="my-modal-1" className="btn modal-button btn-secondary">Car Parts Website</label>
+                            <label htmlhtmlFor="my-modal-1" className="btn modal-button btn-secondary">Car Parts Website</label>
                             <input type="checkbox" id="my-modal-1" className="modal-toggle" />
                             <div className="modal">
                                 <div className="modal-box relative">
-                                    <label htmlFor="my-modal-1" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                                    <label htmlhtmlFor="my-modal-1" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                                     <a className="link link-hover text-secondary font-bold" href="https://sn-car-parts-co.web.app/">Live Link</a>
                                     <figure>
                                         <img src={project1} alt="pp" />
@@ -85,12 +85,12 @@ const Portfolio = () => {
 
                         {/* Halal Grocery */}
                         <div className='my-4'>
-                            <label htmlFor="my-modal-2" className="btn modal-button btn-secondary">Halal Grocery Website</label>
+                            <label htmlhtmlFor="my-modal-2" className="btn modal-button btn-secondary">Halal Grocery Website</label>
 
                             <input type="checkbox" id="my-modal-2" className="modal-toggle" />
                             <div className="modal">
                                 <div className="modal-box relative">
-                                    <label htmlFor="my-modal-2" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                                    <label htmlhtmlFor="my-modal-2" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                                     <a className="link link-hover text-secondary font-bold" href="https://halal-grocery.web.app/">Live Link</a>
                                     <figure>
                                         <img src={project2} alt="pp" />
@@ -101,12 +101,12 @@ const Portfolio = () => {
 
                         {/*  TRAVEL website */}
                         <div className='my-4'>
-                            <label htmlFor="my-modal-3" className="btn modal-button btn-secondary">TRAVEL Website</label>
+                            <label htmlhtmlFor="my-modal-3" className="btn modal-button btn-secondary">TRAVEL Website</label>
 
                             <input type="checkbox" id="my-modal-3" className="modal-toggle" />
                             <div className="modal">
                                 <div className="modal-box relative">
-                                    <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                                    <label htmlhtmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                                     <a className="link link-hover text-secondary font-bold" href="https://snaz-travel.web.app/">Live Link</a>
                                     <figure>
                                         <img src={project3} alt="pp" />

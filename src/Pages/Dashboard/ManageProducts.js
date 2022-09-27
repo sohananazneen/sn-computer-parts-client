@@ -11,7 +11,7 @@ const ManageProducts = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/service/${id}`;
+            const url = `https://stormy-river-80261.herokuapp.com/service/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -26,8 +26,8 @@ const ManageProducts = () => {
     return (
         <div className='my-8 mx-8'>
             <h2 className='text-secondary text-xl text-center my-4'>Manage Products: {services.length} </h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full border">
+            <div className="overflow-x-auto">
+                <table className="table w-full border">
                     <thead>
                         <tr>
                             <th>#</th>

@@ -13,7 +13,7 @@ const CheckoutForm = ({ payOrder }) => {
     const { _id, price, UserName, email } = payOrder;
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://stormy-river-80261.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -81,7 +81,7 @@ const CheckoutForm = ({ payOrder }) => {
                 payOrder: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:5000/order/${_id}`, {
+            fetch(`https://stormy-river-80261.herokuapp.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
@@ -93,7 +93,6 @@ const CheckoutForm = ({ payOrder }) => {
                     setProcessing(false);
                     console.log(data);
                 })
-
         }
     }
     return (
