@@ -6,7 +6,7 @@ const Footer = () => {
             <div className='footer p-10 bg-neutral text-neutral-content'>
 
                 <div>
-                    <h1 className='text-4xl font-bold'>SN Computer's LTd.</h1>
+                    <h1 className='text-4xl font-bold'>SN Computer's Ltd.</h1>
                     <p>Computer Tools Manufacturer Company</p>
                     <div>
                         <div className="grid grid-flow-col gap-4">

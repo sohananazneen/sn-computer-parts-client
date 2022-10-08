@@ -1,4 +1,4 @@
-# SN Computer's LTd.
+# SN Computer's Ltd.
  
 ## [Live link](https://sn-computer-parts.web.app/)
 [https://sn-computer-parts.web.app/](https://sn-computer-parts.web.app/)
