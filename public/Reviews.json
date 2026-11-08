@@ -1,0 +1,20 @@
+[
+    {
+        "_id": 1,
+        "rating": 4.00,
+        "name": "Tim Khan",
+        "customerReview": "Their products seems authentic and service was good enough.You guys can look into it and one thing to add, their behaviour was super nice so i highly recommend this place."
+    },
+    {
+        "_id": 2,
+        "rating": 3.00,
+        "name": "Zakir Islam",
+        "customerReview": "One of the most reliable sellers of car parts and consumables, I buy from here often. They have a range of uncommon good quality products that make me revisit."
+    },
+    {
+        "_id": 3,
+        "rating": 5.00,
+        "name": "Ahmed Ali",
+        "customerReview": "I personally bought a pair of wipers from them. A part of it got disturbed and they replaced it, with their own responsibility. Highly appreciated their service providing mentality."
+    }
+]
