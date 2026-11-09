@@ -12,7 +12,7 @@ const MyOrders = () => {
     useEffect(() => {
         if (user) {
             const email = user.email;
-            fetch(`https://stormy-river-80261.herokuapp.com/order?email=${email}`, {
+            fetch(`https://sn-computer-parts-server.onrender.com/order?email=${email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -36,7 +36,7 @@ const MyOrders = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `https://stormy-river-80261.herokuapp.com/order/${id}`;
+            const url = `https://sn-computer-parts-server.onrender.com/order/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

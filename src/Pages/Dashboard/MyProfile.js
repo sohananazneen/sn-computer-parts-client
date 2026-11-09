@@ -17,7 +17,7 @@ const MyProfile = () => {
             phone: event.target.phone.value
         }
 
-        fetch(`https://stormy-river-80261.herokuapp.com/user`, {
+        fetch(`https://sn-computer-parts-server.onrender.com/user`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

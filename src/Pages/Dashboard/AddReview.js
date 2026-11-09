@@ -6,7 +6,7 @@ const AddReview = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = (data, e) => {
-        const url = `https://stormy-river-80261.herokuapp.com/review`;
+        const url = `https://sn-computer-parts-server.onrender.com/review`;
         fetch(url, {
             method: 'POST',
             headers: {

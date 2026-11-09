@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
 
 const ManageOrders = () => {
-    const { data: orders, setOrders, isLoading } = useQuery('orders', () => fetch('https://stormy-river-80261.herokuapp.com/allOrders', {
+    const { data: orders, setOrders, isLoading } = useQuery('orders', () => fetch('https://sn-computer-parts-server.onrender.com/allOrders', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
@@ -16,7 +16,7 @@ const ManageOrders = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `https://stormy-river-80261.herokuapp.com/order/${id}`;
+            const url = `https://sn-computer-parts-server.onrender.com/order/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

@@ -13,7 +13,7 @@ const CheckoutForm = ({ payOrder }) => {
     const { _id, price, UserName, email } = payOrder;
 
     useEffect(() => {
-        fetch('https://stormy-river-80261.herokuapp.com/create-payment-intent', {
+        fetch('https://sn-computer-parts-server.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -81,7 +81,7 @@ const CheckoutForm = ({ payOrder }) => {
                 payOrder: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://stormy-river-80261.herokuapp.com/order/${_id}`, {
+            fetch(`https://sn-computer-parts-server.onrender.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

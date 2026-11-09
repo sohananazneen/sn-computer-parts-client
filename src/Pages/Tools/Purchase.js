@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -7,11 +7,31 @@ import useSingleTool from '../../hooks/useSingleTool';
 
 const Purchase = () => {
     const { id } = useParams();
-    const [singleTool, setSingleTool] = useSingleTool(id);
+    const [singleTool] = useSingleTool(id);
     const [user] = useAuthState(auth);
+    const [orderQuantity, setOrderQuantity] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const isQuantityList = Array.isArray(singleTool.quantity);
+    const stockQuantities = (isQuantityList ? singleTool.quantity : [singleTool.quantity])
+        .map(value => Number.parseInt(value, 10))
+        .filter(value => Number.isFinite(value) && value >= 0);
+    const minimumOrderQuantity = stockQuantities.length > 0
+        ? (isQuantityList ? Math.min(...stockQuantities) : 1)
+        : '';
+    const availableQuantity = stockQuantities[0] ?? 0;
 
-    const handlePlaceOrder = event => {
+    useEffect(() => {
+        setOrderQuantity(minimumOrderQuantity === '' ? '' : String(minimumOrderQuantity));
+    }, [minimumOrderQuantity]);
+
+    const handlePlaceOrder = async event => {
         event.preventDefault();
+        const quantity = Number(orderQuantity);
+        if (!Number.isInteger(quantity) || quantity < minimumOrderQuantity || quantity > availableQuantity) {
+            toast.error('Enter a quantity within the available stock and minimum order amount.');
+            return;
+        }
+
         const order = {
             email: user?.email,
             UserName: user?.displayName,
@@ -19,24 +39,37 @@ const Purchase = () => {
             price: singleTool.price,
             toolDescription: singleTool.description,
             id,
-            quantity: singleTool.quantity,
+            quantity,
             address: event.target.address.value,
             phone: event.target.phone.value
-        }
-        fetch('https://stormy-river-80261.herokuapp.com/order', {
-            method: 'Post',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(order)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    toast(`Ordered`)
-                }
+        };
+
+        setIsSubmitting(true);
+        try {
+            const response = await fetch('https://sn-computer-parts-server.onrender.com/order', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(order)
             });
-    }
+            if (!response.ok) {
+                throw new Error(`Order request failed (${response.status}).`);
+            }
+
+            const result = await response.json();
+            if (!result.insertedId) {
+                throw new Error('The server did not confirm the order.');
+            }
+            toast.success('Order placed successfully.');
+            event.target.reset();
+            setOrderQuantity(String(minimumOrderQuantity));
+        } catch (error) {
+            toast.error(error.message || 'Could not place the order. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <div className='flex justify-center items-center'>
@@ -51,11 +84,26 @@ const Purchase = () => {
 
                         {/* <input type="text" value={singleTool.quantity} className="input input-bordered w-full max-w-xs" /> */}
 
-                        <input type="number" value={singleTool.quantity} className="input input-bordered w-full max-w-xs" placeholder="quantity" />
-
+                        <input
+                            type="number"
+                            name="quantity"
+                            value={orderQuantity}
+                            onChange={event => setOrderQuantity(event.target.value)}
+                            min={minimumOrderQuantity || undefined}
+                            max={availableQuantity || undefined}
+                            required
+                            disabled={availableQuantity === 0}
+                            className="input input-bordered w-full max-w-xs"
+                            placeholder="Quantity"
+                        />
                         <input type="text" name="address" placeholder="Address" className="input input-bordered w-full max-w-xs" />
                         <input type="text" name="phone" placeholder="Phone Number" className="input input-bordered w-full max-w-xs" />
-                        <input type="submit" value="Submit" className="btn btn-secondary w-full max-w-xs" />
+                        <input
+                            type="submit"
+                            value={isSubmitting ? "Placing order..." : "Place Order"}
+                            disabled={isSubmitting || availableQuantity === 0}
+                            className="btn btn-secondary w-full max-w-xs"
+                        />
                     </form>
                 </div>
             </div>

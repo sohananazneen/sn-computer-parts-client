@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51L5CsXDqUXs6MwhfMrFfZMpzb4B2VibJ0XoQA
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `https://stormy-river-80261.herokuapp.com/order/${id}`;
+    const url = `https://sn-computer-parts-server.onrender.com/order/${id}`;
     const { data: payOrder, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
         headers: {
