@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import loginGif from '../../assets/images/loginGif.gif'
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
@@ -21,14 +21,12 @@ const Login = () => {
 
     let signInError;
     const navigate = useNavigate();
-    const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
         if (token) {
-            navigate(from, { replace: true });
+            navigate("/dashboard", { replace: true });
         }
-    }, [token, from, navigate])
+    }, [token, navigate])
 
     if (loading || gLoading) {
         return <Loading></Loading>
@@ -39,7 +37,6 @@ const Login = () => {
     }
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
-        console.log(data);
     }
     return (
         <div className="hero min-h-screen bg-base-200">
