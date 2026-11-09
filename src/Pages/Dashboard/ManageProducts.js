@@ -11,7 +11,7 @@ const ManageProducts = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `https://stormy-river-80261.herokuapp.com/service/${id}`;
+            const url = `https://sn-computer-parts-server.onrender.com/service/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -41,7 +41,7 @@ const ManageProducts = () => {
                             services.map((product, index) =>
                                 <tr>
                                     <th scope="row">{index + 1}</th>
-                                    <td>{product.toolName}</td>
+                                    <td>{product.toolName || product.name}</td>
                                     <td>{product.price}</td>
                                     <td>{product.quantity}</td>
                                     <button className='btn btn-error text-dark mx-2' onClick={() => handleDelete(product._id)}>Delete</button>

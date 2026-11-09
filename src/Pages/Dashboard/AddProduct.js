@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const AddProduct = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = (data, e) => {
-        const url = `https://stormy-river-80261.herokuapp.com/service`;
+        const url = `https://sn-computer-parts-server.onrender.com/service`;
         fetch(url, {
             method: 'POST',
             headers: {
