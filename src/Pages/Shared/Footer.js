@@ -4,7 +4,6 @@ const Footer = () => {
     return (
         <footer className="p-10">
             <div className='footer p-10 bg-neutral text-neutral-content'>
-
                 <div>
                     <h1 className='text-4xl font-bold'>SN Computer's Ltd.</h1>
                     <p>Computer Tools Manufacturer Company</p>

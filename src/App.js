@@ -32,40 +32,40 @@ function App() {
     <div >
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="tools" element={<Tools />} />
-        <Route path="summary" element={<BusinessSummary />} />
-        <Route path="review" element={<Reviews />} />
-        <Route path="blog" element={<Blog />} />
-        <Route path="portfolio" element={<Portfolio />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="about" element={<About />} />
-        <Route path="tool/:id" element={
-          <RequireAuth>
-            <Purchase />
-          </RequireAuth>
-        } />
-        <Route path="dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
-          <Route index element={<MyProfile></MyProfile>}></Route>
-          <Route path="myOrders" element={<MyOrders></MyOrders>}></Route>
-          <Route path="addReview" element={<AddReview></AddReview>}></Route>
-          <Route path="payment/:id" element={<Payment></Payment>}></Route>
-          <Route path="allUsers" element={<RequireAdmin>
-            <AllUsers></AllUsers>
-          </RequireAdmin>}></Route>
-          <Route path="addProduct" element={<RequireAdmin>
-            <AddProduct></AddProduct>
-          </RequireAdmin>}></Route>
-          <Route path="manageProducts" element={<RequireAdmin>
-            <ManageProducts></ManageProducts>
-          </RequireAdmin>}></Route>
-          <Route path="manageOrders" element={<RequireAdmin>
-            <ManageOrders></ManageOrders>
-          </RequireAdmin>}></Route>
-        </Route>
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
-        <Route path='*' element={<NotFound></NotFound>}></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="tools" element={<Tools />} />
+          <Route path="summary" element={<BusinessSummary />} />
+          <Route path="review" element={<Reviews />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="about" element={<About />} />
+          <Route path="tool/:id" element={
+            <RequireAuth>
+              <Purchase />
+            </RequireAuth>
+          } />
+          <Route path="dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
+            <Route index element={<MyProfile></MyProfile>}></Route>
+            <Route path="myOrders" element={<MyOrders></MyOrders>}></Route>
+            <Route path="addReview" element={<AddReview></AddReview>}></Route>
+            <Route path="payment/:id" element={<Payment></Payment>}></Route>
+            <Route path="allUsers" element={<RequireAdmin>
+              <AllUsers></AllUsers>
+            </RequireAdmin>}></Route>
+            <Route path="addProduct" element={<RequireAdmin>
+              <AddProduct></AddProduct>
+            </RequireAdmin>}></Route>
+            <Route path="manageProducts" element={<RequireAdmin>
+              <ManageProducts></ManageProducts>
+            </RequireAdmin>}></Route>
+            <Route path="manageOrders" element={<RequireAdmin>
+              <ManageOrders></ManageOrders>
+            </RequireAdmin>}></Route>
+          </Route>
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
       <Footer />

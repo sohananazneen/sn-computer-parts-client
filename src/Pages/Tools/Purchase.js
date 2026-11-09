@@ -15,7 +15,7 @@ const Purchase = () => {
         const order = {
             email: user?.email,
             UserName: user?.displayName,
-            toolName: singleTool.toolName,
+            toolName: singleTool.toolName || singleTool.name,
             price: singleTool.price,
             toolDescription: singleTool.description,
             id,
@@ -44,7 +44,7 @@ const Purchase = () => {
                 <div className="card-body items-center text-center">
                     <form onSubmit={handlePlaceOrder} className='grid grid-cols-1 gap-3 my-4'>
                         <img src={singleTool.img} className="img-fluid rounded w-50" alt="" />
-                        <h2 className="card-title">Tool's Name: {singleTool.toolName}</h2>
+                        <h2 className="card-title">Tool's Name: {singleTool.toolName || singleTool.name}</h2>
                         <h2>User Name: {user?.displayName}</h2>
                         <h2>User email: {user?.email}</h2>
                         <p>Price: $ {singleTool.price}</p>
