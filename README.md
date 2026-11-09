@@ -18,8 +18,3 @@
 
 Technology Used: HTML, CSS, React Js, React Bootstrap, React Router, Node Js, Express Js, MongoDB, Firebase, Heroku, Stripe, Jwt.
 
-###  Admin credentials 
-(
-   email address :  snaz@sn.com 
-   password : 123456
-)
